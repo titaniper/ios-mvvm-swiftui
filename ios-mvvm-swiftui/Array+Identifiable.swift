@@ -15,6 +15,6 @@ extension Array where Element: Identifiable {
                 return index
             }
         }
-        return 0 // TODO: bogus
+        return nil
     }
 }
