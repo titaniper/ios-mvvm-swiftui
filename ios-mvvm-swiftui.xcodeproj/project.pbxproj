@@ -19,6 +19,7 @@
 		5E2B1F4824D0F3FA00F391B5 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2B1F4724D0F3FA00F391B5 /* GridLayout.swift */; };
 		5E2B1F4A24D0F54000F391B5 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2B1F4924D0F54000F391B5 /* Array+Identifiable.swift */; };
 		5E2B1F4C24D3950E00F391B5 /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2B1F4B24D3950E00F391B5 /* Array+Only.swift */; };
+		5E2B1F4E24D3982500F391B5 /* Array+suffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2B1F4D24D3982500F391B5 /* Array+suffle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5E2B1F4724D0F3FA00F391B5 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		5E2B1F4924D0F54000F391B5 /* Array+Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 		5E2B1F4B24D3950E00F391B5 /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
+		5E2B1F4D24D3982500F391B5 /* Array+suffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+suffle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				5E2B1F3124C5DD4C00F391B5 /* Preview Content */,
 				5E2B1F4124D0E7CC00F391B5 /* Grid.swift */,
 				5E2B1F4B24D3950E00F391B5 /* Array+Only.swift */,
+				5E2B1F4D24D3982500F391B5 /* Array+suffle.swift */,
 			);
 			path = "ios-mvvm-swiftui";
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2B1F4E24D3982500F391B5 /* Array+suffle.swift in Sources */,
 				5E2B1F3E24C6543E00F391B5 /* MomoriGame.swift in Sources */,
 				5E2B1F2A24C5DD4B00F391B5 /* AppDelegate.swift in Sources */,
 				5E2B1F2C24C5DD4B00F391B5 /* SceneDelegate.swift in Sources */,

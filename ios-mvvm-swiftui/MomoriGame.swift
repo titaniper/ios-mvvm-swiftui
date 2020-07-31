@@ -46,6 +46,12 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
     }
     
+    mutating func suffle() -> MemoryGame<CardContent> {
+        // TODO: MemoryGame 으로 옮길 것
+        self.cards.shuffle()
+        return self
+    }
+    
     struct Card: Identifiable {
         var id: Int
         var isFaceUp: Bool = false
