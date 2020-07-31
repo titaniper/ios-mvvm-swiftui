@@ -22,6 +22,9 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
     }
     
+    var point = 0;
+    
+    
     mutating func choose(card: Card) {
         print("card chosen: \(card)")
         if let chosenIndex = cards.firstIndex(matching: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched {
@@ -29,21 +32,35 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
+                    point += 2
+                } else {
+                    point -= 1
                 }
                 cards[chosenIndex].isFaceUp = true
             } else {
                 indexOfTheOneAndOnlyFaceUpCard = chosenIndex
             }
         }
+        print("card point: \(point)")
     }
     
-    mutating func restart() {
-         // TODO: View model 에서 처음부터 다시 리스트를 받도록 변경
+    mutating func restart()  {
+        // TODO 개선
+        self.reset();
         self.suffle()
+    }
+    
+    mutating func reset() {
+         // TODO: View model 에서 처음부터 다시 리스트를 받도록 변경
         for index in cards.indices  {
             cards[index].isMatched = false
             cards[index].isFaceUp = false
         }
+        self.point = 0
+    }
+    
+    func getPoint() -> Int {
+        return self.point
     }
     
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
@@ -53,6 +70,9 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             cards.append(Card(id: pairIndex * 2, content: content))
             cards.append(Card(id: pairIndex * 2 + 1, content: content))
         }
+        
+        self.reset();
+        self.suffle()
     }
     
     mutating func suffle() {

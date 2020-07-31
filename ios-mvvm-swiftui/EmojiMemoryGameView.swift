@@ -14,6 +14,7 @@ struct EmojiMemoryGameView: View {
     
     @ObservedObject var viewModel: EmojiMemoryGame
     
+    
     // You never access this "var body"
     // This "body" is called by the system when it needs to draw the View
     var body: some View {
@@ -28,6 +29,7 @@ struct EmojiMemoryGameView: View {
             Button("New Game") {
                 self.viewModel.restart()
             }
+            Text("Point \(viewModel.getPoint())")
         }
     }
     
