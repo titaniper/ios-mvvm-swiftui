@@ -17,6 +17,21 @@ struct EmojiMemoryGameView: View {
     // You never access this "var body"
     // This "body" is called by the system when it needs to draw the View
     var body: some View {
+        VStack{
+            self.Header()
+            self.Body()
+        }
+    }
+    
+    func Header() -> some View {
+        HStack {
+            Button("New Game") {
+                self.viewModel.restart()
+            }
+        }
+    }
+    
+    func Body() -> some View {
         Grid(viewModel.cards) { card in
             CardView(card: card).onTapGesture {
                 self.viewModel.choose(card: card)

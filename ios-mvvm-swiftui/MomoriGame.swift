@@ -37,6 +37,15 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
     }
     
+    mutating func restart() {
+         // TODO: View model 에서 처음부터 다시 리스트를 받도록 변경
+        self.suffle()
+        for index in cards.indices  {
+            cards[index].isMatched = false
+            cards[index].isFaceUp = false
+        }
+    }
+    
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
         for pairIndex in 0..<numberOfPairsOfCards {
@@ -46,10 +55,9 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
     }
     
-    mutating func suffle() -> MemoryGame<CardContent> {
+    mutating func suffle() {
         // TODO: MemoryGame 으로 옮길 것
         self.cards.shuffle()
-        return self
     }
     
     struct Card: Identifiable {
