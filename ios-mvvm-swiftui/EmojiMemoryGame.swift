@@ -9,9 +9,10 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
-    @Published  private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+    // 퍼블리셔로 사용하려면 published 어노테이션 지정해줘야 한다.
+    @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
     
-    static func createMemoryGame() -> MemoryGame<String> {
+    private static func createMemoryGame() -> MemoryGame<String> {
         let emojis: Array<String> = ["👻", "🎃", "🕷"]
         
         var game = MemoryGame<String>(numberOfPairsOfCards: emojis.count) { pairIndex in

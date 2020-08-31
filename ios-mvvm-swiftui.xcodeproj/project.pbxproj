@@ -20,6 +20,8 @@
 		5E2B1F4A24D0F54000F391B5 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2B1F4924D0F54000F391B5 /* Array+Identifiable.swift */; };
 		5E2B1F4C24D3950E00F391B5 /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2B1F4B24D3950E00F391B5 /* Array+Only.swift */; };
 		5E2B1F4E24D3982500F391B5 /* Array+suffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2B1F4D24D3982500F391B5 /* Array+suffle.swift */; };
+		5E8097AF24FD718C00E54A4D /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8097AE24FD718C00E54A4D /* Pie.swift */; };
+		5E8097B124FD74B200E54A4D /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8097B024FD74B200E54A4D /* Cardify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		5E2B1F4924D0F54000F391B5 /* Array+Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 		5E2B1F4B24D3950E00F391B5 /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
 		5E2B1F4D24D3982500F391B5 /* Array+suffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+suffle.swift"; sourceTree = "<group>"; };
+		5E8097AE24FD718C00E54A4D /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		5E8097B024FD74B200E54A4D /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				5E2B1F4124D0E7CC00F391B5 /* Grid.swift */,
 				5E2B1F4B24D3950E00F391B5 /* Array+Only.swift */,
 				5E2B1F4D24D3982500F391B5 /* Array+suffle.swift */,
+				5E8097AE24FD718C00E54A4D /* Pie.swift */,
+				5E8097B024FD74B200E54A4D /* Cardify.swift */,
 			);
 			path = "ios-mvvm-swiftui";
 			sourceTree = "<group>";
@@ -173,8 +179,10 @@
 				5E2B1F2C24C5DD4B00F391B5 /* SceneDelegate.swift in Sources */,
 				5E2B1F4C24D3950E00F391B5 /* Array+Only.swift in Sources */,
 				5E2B1F2E24C5DD4B00F391B5 /* EmojiMemoryGameView.swift in Sources */,
+				5E8097B124FD74B200E54A4D /* Cardify.swift in Sources */,
 				5E2B1F4024C6557700F391B5 /* EmojiMemoryGame.swift in Sources */,
 				5E2B1F4A24D0F54000F391B5 /* Array+Identifiable.swift in Sources */,
+				5E8097AF24FD718C00E54A4D /* Pie.swift in Sources */,
 				5E2B1F4224D0E7CC00F391B5 /* Grid.swift in Sources */,
 				5E2B1F4824D0F3FA00F391B5 /* GridLayout.swift in Sources */,
 			);
