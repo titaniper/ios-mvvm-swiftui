@@ -14,6 +14,7 @@ struct EmojiMemoryGameView: View {
     // 구독 모델에 ObservedObject 어노테이션을 붙여주어야 한다.
     @ObservedObject var viewModel: EmojiMemoryGame
     
+    
     // You never access this "var body"
     // view body는 private 를 허용하지 않는다.
     var body: some View {
@@ -28,6 +29,7 @@ struct EmojiMemoryGameView: View {
             Button("New Game") {
                 self.viewModel.restart()
             }
+            Text("Point \(viewModel.getPoint())")
         }
     }
     
