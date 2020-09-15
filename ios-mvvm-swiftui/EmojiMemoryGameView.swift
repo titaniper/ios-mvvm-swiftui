@@ -21,6 +21,11 @@ struct EmojiMemoryGameView: View {
         VStack{
             self.Header()
             self.Body()
+            Button(action: {
+                withAnimation(.linear) {
+                        self.viewModel.restart()
+                }
+            }, label: { Text("New Game")})
         }
     }
     
@@ -36,7 +41,9 @@ struct EmojiMemoryGameView: View {
     private func Body() -> some View {
         Grid(viewModel.cards) { card in
             CardView(card: card).onTapGesture {
-                self.viewModel.choose(card: card)
+                withAnimation(.linear(duration: 0.75), {
+                    self.viewModel.choose(card: card)
+                })
             }.padding(5)
         }
         .padding()
@@ -57,15 +64,40 @@ struct CardView: View {
         }
     }
     
+    @State private var animatedBuonusRemining: Double = 0
+    
+    private func startBonustimeAnimation() {
+//        animatedBuonusRemining = card.bonusRemaining
+//        withAnimation(.linear(duration: card.bonusTimeRemaining)) {
+//            animatedBuonusRemining = 0
+//        }
+    }
+    
     @ViewBuilder
     private func body(for size: CGSize) -> some View {
         if card.isFaceUp || !card.isMatched {
             ZStack {
-                Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(110-90), clockwise: true).padding(5).opacity(0.4)
+//                Group {
+//                    if card.isConsumingBonusTime {
+//                        Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(-animatedBuonusRemining*360-90), clockwise: true).padding(5).opacity(0.4)
+//                            .onAppear {
+//                            startBonustimeAnimation()
+//                        }
+//                    } else {
+//                            Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(-animatedBuonusRemining*360-90), clockwise: true).padding(5).opacity(0.4)
+//                    }
+//                }
+//                .padding(5).opacity(0.4)
+//                .transition(.identity)
+                Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(-animatedBuonusRemining*360-90), clockwise: true).padding(5).opacity(0.4)
                 Text(card.content)
                     .font(Font.system(size: fontSize(for: size)))
+                    .rotationEffect(Angle.degrees(card.isMatched ? 180 : 0))
+                    .animation(Animation.easeInOut(duration: 1))
             }
             .cardify(isFaceUp: card.isFaceUp)
+            .transition(AnyTransition.scale)
+            rotation3DEffect(Angle.degrees(card.isFaceUp ? 0 : 180), axis: (0, 1, 0))
         }
     }
 }
